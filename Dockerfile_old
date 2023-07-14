@@ -1,0 +1,7 @@
+# a Dockerfile specifies how to build a Docker image
+FROM fininsight
+
+ADD . /code
+WORKDIR /code
+
+ENTRYPOINT ["python", "app.py"]
