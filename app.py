@@ -7,7 +7,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import json
-import sqlite3
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.impute import SimpleImputer
@@ -17,22 +16,12 @@ import tensorflow as tf
 from tensorflow import keras
 from keras.models import Sequential
 from keras.layers import Dense, LSTM
-#from user import user, init_app
-
-conn = sqlite3.connect('database.db')
 
 # Set the Seaborn style
 sns.set(style='whitegrid')
 
-conn = sqlite3.connect('database.db')
-
-# Set the Seaborn style
-sns.set(style='whitegrid')
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-#init_app(app)
-#app.register_blueprint(user.bp)
 
 # Route to render the home page
 @app.route('/')
